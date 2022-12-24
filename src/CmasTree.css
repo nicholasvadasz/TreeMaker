@@ -1,0 +1,84 @@
+.CmasTree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  font-family: "Fredoka One", cursive;
+  color: rgb(102, 194, 93);
+}
+
+.TreeRender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Fredoka One", cursive;
+  color: rgb(102, 194, 93);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.InputFields {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fredoka One", cursive;
+  color: rgb(102, 194, 93);
+}
+
+.NameInput {
+  /* make background green and outline white */
+  background-color: #08301c;
+  border: 1px solid rgb(255, 255, 255);
+  /* change highlight color */
+  outline: 1px solid rgb(102, 194, 93);
+  border-radius: 5px;
+  color: white;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 40%;
+}
+
+.MakeTreeButton {
+  /* make background green and outline white */
+  background-color: #99ecc3;
+  border: 1px solid rgb(255, 255, 255);
+  /* change highlight color */
+  outline: 1px solid rgb(102, 194, 93);
+  border-radius: 5px;
+  color: white;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  /* make it such that when its pressed the background color changes */
+}
+
+.MakeTreeButton:active {
+  transform: translateY(1px);
+  transition: 0.1s;
+  background-color: #08301c;
+}
+
+.star {
+  color: rgb(230, 209, 23);
+  font-size: 1.5rem;
+}
+
+.red {
+  color: rgb(219, 92, 92);
+}
+
+.yellow {
+  color: rgb(253, 253, 118);
+}
+
+.blue {
+  color: rgb(45, 45, 170);
+}
+
+.trunk {
+  color: rgb(102, 51, 0);
+}
