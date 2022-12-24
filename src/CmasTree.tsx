@@ -113,6 +113,7 @@ export default function CmasTree() {
         />
         <button
           className="MakeTreeButton"
+          title="Make Tree"
           onClick={() => {
             setBlinking(false);
             populateLeavesOfTree();
@@ -123,6 +124,7 @@ export default function CmasTree() {
         </button>
         <button
           className="MakeTreeButton"
+          title="Copy Link"
           onClick={() => {
             copyToClipboard();
           }}
@@ -131,6 +133,7 @@ export default function CmasTree() {
         </button>
         <button
           className="MakeTreeButton"
+          title="Twinkle Ornaments"
           onClick={() => {
             setBlinking(!blinking);
           }}
