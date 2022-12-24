@@ -47,6 +47,14 @@ export default function CmasTree() {
     setLeavesOfTree(myArray);
   };
 
+  const copyToClipboard = () => {
+    // replace spaces in input with %20 for url
+    let sanitizedInput = input.replace(/ /g, "%20");
+    navigator.clipboard.writeText(
+      window.location.origin + "/" + sanitizedInput
+    );
+  };
+
   return (
     <div className="CmasTree">
       <div className="TreeRender">
@@ -73,7 +81,7 @@ export default function CmasTree() {
         <button
           className="MakeTreeButton"
           onClick={() => {
-            navigator.clipboard.writeText(window.location.origin + "/" + input);
+            copyToClipboard();
           }}
         >
           📤
