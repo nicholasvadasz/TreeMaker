@@ -1,4 +1,4 @@
-# Tree Maker
+# TreeMaker
 
 A ascii christmas tree generator written in React.
 
