@@ -138,7 +138,7 @@ export default function CmasTree() {
             setBlinking(!blinking);
           }}
         >
-          {blinking ? "🔴" : "⚪"}
+          {blinking ? "🔦" : "🔆"}
         </button>
       </div>
     </div>
