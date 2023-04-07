@@ -7,7 +7,7 @@ export default function CmasTree() {
   const { name } = useParams<{ name: string }>();
   const [initialFlush, setInitialFlush] = useState(false);
   const [input, setInput] = useState(name ? name : "");
-  const [blinking, setBlinking] = useState(false);
+  const [blinking, setBlinking] = useState(true);
   const [leavesOfTree, setLeavesOfTree] = useState([<div></div>]);
   const [renderLeaves, setRenderLeaves] = useState([<div></div>]);
   const [rendering, setRendering] = useState(false);
@@ -19,12 +19,6 @@ export default function CmasTree() {
       setRendering(true);
       setInitialFlush(true);
     }
-    if (blinking) {
-      const interval = setInterval(() => {
-        twinkleOrnaments();
-      }, 1000);
-      return () => clearInterval(interval);
-    }
     if (rendering) {
       let i = 0;
       const interval = setInterval(() => {
@@ -34,6 +28,13 @@ export default function CmasTree() {
           setRendering(false);
         }
       }, 100);
+      return () => clearInterval(interval);
+    }
+    if (blinking && input) {
+      console.log("blinking");
+      const interval = setInterval(() => {
+        twinkleOrnaments();
+      }, 1000);
       return () => clearInterval(interval);
     }
   }, [name, blinking, rendering]);
@@ -91,7 +92,7 @@ export default function CmasTree() {
   };
 
   const copyToClipboard = () => {
-    let sanitizedInput = input.replace(/ /g, "%20");
+    let sanitizedInput = encodeURI(input);
     navigator.clipboard.writeText(
       window.location.origin + "/" + sanitizedInput
     );
@@ -115,7 +116,6 @@ export default function CmasTree() {
           className="MakeTreeButton"
           title="Make Tree"
           onClick={() => {
-            setBlinking(false);
             populateLeavesOfTree();
             setRendering(true);
           }}
@@ -138,7 +138,7 @@ export default function CmasTree() {
             setBlinking(!blinking);
           }}
         >
-          {blinking ? "🔦" : "🔆"}
+          {blinking ? "🔦" : "🔅"}
         </button>
       </div>
     </div>
